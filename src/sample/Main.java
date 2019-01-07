@@ -18,12 +18,12 @@ import java.util.TimerTask;
 
 
 public class Main extends Application {
-
+    int length = 5;
+    
     @Override
     public void start(Stage primaryStage) throws Exception{
         ArrayList<Integer> pattern = new ArrayList<Integer>();
         ArrayList<Integer> test = new ArrayList<Integer>();
-        int length = 5;
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Button");
         Button start = new Button("Press to Start");
