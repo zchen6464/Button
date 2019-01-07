@@ -34,35 +34,6 @@ public class Main extends Application {
         Button red = new Button("Red");
         Button submit = new Button("Submit");
 
-        Timer timer = new Timer();
-        TimerTask light = new TimerTask() {
-            @Override
-            public void run() {
-                blue.setStyle("-fx-background-color: white");
-                green.setStyle("-fx-background-color: white");
-                yellow.setStyle("-fx-background-color: white");
-                red.setStyle("-fx-background-color: white");
-                int num = RNGButton();
-                pattern.add(num);
-                if(num == 0)
-                {
-                    blue.setStyle("-fx-background-color: blue");
-                }
-                else if(num == 1)
-                {
-                    green.setStyle("-fx-background-color: green");
-                }
-                else if(num ==2)
-                {
-                    yellow.setStyle("-fx-background-color: yellow");
-                }
-                else
-                {
-                    red.setStyle("-fx-background-color: red");
-                }
-            }
-        };
-
         EventHandler<ActionEvent> simonSays = new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -145,6 +116,34 @@ public class Main extends Application {
     }
     public void setPattern(Stage primarstage)
     {
+        Timer timer = new Timer();
+        TimerTask light = new TimerTask() {
+            @Override
+            public void run() {
+                blue.setStyle("-fx-background-color: white");
+                green.setStyle("-fx-background-color: white");
+                yellow.setStyle("-fx-background-color: white");
+                red.setStyle("-fx-background-color: white");
+                int num = RNGButton();
+                pattern.add(num);
+                if(num == 0)
+                {
+                    blue.setStyle("-fx-background-color: blue");
+                }
+                else if(num == 1)
+                {
+                    green.setStyle("-fx-background-color: green");
+                }
+                else if(num ==2)
+                {
+                    yellow.setStyle("-fx-background-color: yellow");
+                }
+                else
+                {
+                    red.setStyle("-fx-background-color: red");
+                }
+            }
+        };
         for(int i = 0; i < length; i++)
         {
             timer.schedule(light, 1000l);
